@@ -13,21 +13,21 @@ def translate_role_for_streamlit(user_role):
 
 def main():
     # Add CSS to change background color and align content to the left
-    html_css= """
-    <style>
-    .main {
-        background-color: #f0f2f6; /* Change this to your desired background color */
-        display: flex;
-        justify-content: flex-start;
-    }
-    .stChatMessage {
-        display: flex;
-        justify-content: flex-start;
-        background-color: #f0f2f6;
-    }
-    </style>
-    """
-    st.markdown(html_css,unsafe_allow_html=True)
+    # html_css= """
+    # <style>
+    # .main {
+    #     background-color: #f0f2f6; /* Change this to your desired background color */
+    #     display: flex;
+    #     justify-content: flex-start;
+    # }
+    # .stChatMessage {
+    #     display: flex;
+    #     justify-content: flex-start;
+    #     background-color: #f0f2f6;
+    # }
+    # </style>
+    # """
+    # st.markdown(html_css,unsafe_allow_html=True)
     st.title("let's connect with Bio Brain...")
 
     # Initialize chat session in Streamlit if not already present
