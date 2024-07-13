@@ -9,16 +9,17 @@ import datetime
 import pytz,json,re,logging
 from langchain.memory import ConversationBufferMemory
 import sys
+from dotenv import load_dotenv
 # Add parent directory to Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from mongo_db_connection import mongo_connection
-
+load_dotenv()  # Load environment variables from .env file
 
 # Set up logging configuration
 logging.basicConfig(filename='qa_bot.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s')
 
 # Initialize GROQ client with API key
-groq_client = Groq(api_key=os.environ.get("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"))
+groq_client = Groq(api_key=os.getenv("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"))
 
 class EmbeddingModel:
     def __init__(self, model_name="sentence-transformers/all-mpnet-base-v2"):
