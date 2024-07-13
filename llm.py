@@ -18,8 +18,12 @@ from mongo_db_connection import mongo_connection
 # Set up logging configuration
 logging.basicConfig(filename='qa_bot.log', level=logging.DEBUG, format='%(asctime)s %(message)s')
 
-# Initialize GROQ client with API key
-groq_client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+# Initialize GROQ client with API key from Streamlit secrets
+api_key = st.secrets["GROQ_API_KEY"]
+if not api_key:
+    raise ValueError("GROQ_API_KEY not found in Streamlit secrets")
+
+groq_client = Groq(api_key=api_key)
 
 class EmbeddingModel:
     def __init__(self, model_name="sentence-transformers/all-mpnet-base-v2"):
