@@ -10,10 +10,18 @@ import pytz,json,re,logging
 from langchain.memory import ConversationBufferMemory
 import sys
 from dotenv import load_dotenv
+from dotenv import dotenv_values
 # Add parent directory to Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from mongo_db_connection import mongo_connection
-load_dotenv()  # Load environment variables from .env file
+def load_dotenv_with_encoding(dotenv_path, encoding='utf-8'):
+    with open(dotenv_path, 'r', encoding=encoding) as f:
+        config = dotenv_values(stream=f)
+    for key, value in config.items():
+        os.environ[key] = value
+
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 # Set up logging configuration
 logging.basicConfig(filename='qa_bot.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s')
