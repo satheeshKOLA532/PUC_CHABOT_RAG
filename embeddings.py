@@ -31,11 +31,9 @@ def load_pdf(file_path):
 
 # Load the PDF file
 
-pdf_path = '/home/satheeshbabu/python_projects/EDUCATION_CHATBOT_RAG/Breathing_Exchange_Of_Gases.pdf'
+pdf_path = 'path to your source file(pdf,docx,etc..)'
 pdf_text = load_pdf(pdf_path)
 
-# Split the text into smaller chunks
-# text_splitter = RecursiveCharacterTextSplitter(chunk_size=32, chunk_overlap=4) 
 text_splitter = RecursiveCharacterTextSplitter() 
 texts = text_splitter.split_text(pdf_text)
 
