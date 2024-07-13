@@ -27,7 +27,7 @@ load_dotenv(dotenv_path)
 logging.basicConfig(filename='qa_bot.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s')
 
 # Initialize GROQ client with API key
-groq_client = Groq(api_key=os.getenv("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"))
+groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 class EmbeddingModel:
     def __init__(self, model_name="sentence-transformers/all-mpnet-base-v2"):
