@@ -1,0 +1,10 @@
+pymongo
+PyPDF2
+langchain
+langchain-huggingface
+urllib3
+numpy
+groq
+datetime
+pytz
+streamlit
