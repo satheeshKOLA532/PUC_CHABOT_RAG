@@ -8,3 +8,4 @@ groq
 datetime
 pytz
 streamlit
+python-dotenv
