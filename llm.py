@@ -20,7 +20,7 @@ from mongo_db_connection import mongo_connection
 logging.basicConfig(filename='qa_bot.log', level=logging.DEBUG, format='%(asctime)s %(message)s')
 
 # Initialize GROQ client with API key from Streamlit secrets
-api_key = st.secrets["GROQ_API_KEY"]
+api_key = st.secrets['GROQ_API_KEY']
 if not api_key:
     raise ValueError("GROQ_API_KEY not found in Streamlit secrets")
 
